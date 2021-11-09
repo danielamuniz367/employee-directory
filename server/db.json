@@ -8,7 +8,8 @@
       "last_name": "Forsyth",
       "location": "New York City",
       "phone": "246-924-2617",
-      "title": "VP Marketing"
+      "title": "VP Marketing",
+      "picture":""
     },
     {
       "id": 3,
@@ -18,7 +19,8 @@
       "last_name": "Heaysman",
       "location": "Berlin",
       "phone": "202-921-2902",
-      "title": "Safety Technician I"
+      "title": "Safety Technician I",
+      "picture": "https://randomuser.me/api/portraits/men/67.jpg"
     },
     {
       "id": 4,
@@ -28,7 +30,8 @@
       "last_name": "Beggs",
       "location": "San Francisco",
       "phone": "949-170-1840",
-      "title": "Marketing Manager"
+      "title": "Marketing Manager",
+      "picture":"https://randomuser.me/api/portraits/men/21.jpg"
     },
     {
       "id": 5,
@@ -38,7 +41,8 @@
       "last_name": "Lopez",
       "location": "New York City",
       "phone": "514-432-3547",
-      "title": "Nurse"
+      "title": "Nurse",
+      "picture":"https://randomuser.me/api/portraits/women/19.jpg"
     },
     {
       "id": 6,
@@ -48,7 +52,8 @@
       "last_name": "Gerbel",
       "location": "San Francisco",
       "phone": "740-429-0798",
-      "title": "Legal Assistant"
+      "title": "Legal Assistant",
+      "picture":"https://randomuser.me/api/portraits/women/50.jpg"
     },
     {
       "id": 7,
@@ -58,7 +63,8 @@
       "last_name": "Bottlestone",
       "location": "Denver",
       "phone": "285-790-0743",
-      "title": "Developer I"
+      "title": "Developer I",
+      "picture": "https://randomuser.me/api/portraits/women/65.jpg"
     },
     {
       "id": 8,
@@ -68,7 +74,8 @@
       "last_name": "Colgan",
       "location": "Seattle",
       "phone": "289-217-5061",
-      "title": "GIS Technical Architect"
+      "title": "GIS Technical Architect",
+      "picture": null
     },
     {
       "id": 9,
@@ -78,7 +85,8 @@
       "last_name": "Perrone",
       "location": "Berlin",
       "phone": "750-517-4806",
-      "title": "Quality Engineer"
+      "title": "Quality Engineer",
+      "picture":"https://randomuser.me/api/portraits/women/82.jpg"
     },
     {
       "id": 10,
@@ -88,7 +96,8 @@
       "last_name": "Wellbeloved",
       "location": "Austin",
       "phone": "619-362-9302",
-      "title": "Sales Associate"
+      "title": "Sales Associate",
+      "picture": "https://randomuser.me/api/portraits/women/6.jpg"
     },
     {
       "id": 11,
@@ -98,7 +107,8 @@
       "last_name": "Gabitis",
       "location": "Denver",
       "phone": "486-668-8142",
-      "title": "Senior Financial Analyst"
+      "title": "Senior Financial Analyst",
+      "picture":"https://randomuser.me/api/portraits/men/47.jpg"
     },
     {
       "id": 12,
@@ -108,7 +118,8 @@
       "last_name": "Armistead",
       "location": "Berlin",
       "phone": "330-566-0601",
-      "title": "Structural Analysis Engineer"
+      "title": "Structural Analysis Engineer",
+      "picture": "https://randomuser.me/api/portraits/women/32.jpg"
     },
     {
       "id": 13,
@@ -118,7 +129,8 @@
       "last_name": "Simanek",
       "location": "Berlin",
       "phone": "493-222-5721",
-      "title": "Structural Analysis Engineer"
+      "title": "Structural Analysis Engineer",
+      "picture": "https://randomuser.me/api/portraits/women/14.jpg"
     },
     {
       "id": 14,
@@ -128,7 +140,8 @@
       "last_name": "Ankrett",
       "location": "San Francisco",
       "phone": "950-610-6813",
-      "title": "Associate Professor"
+      "title": "Associate Professor",
+      "picture": null
     },
     {
       "id": 15,
@@ -138,7 +151,8 @@
       "last_name": "Kraut",
       "location": "Denver",
       "phone": "685-284-2310",
-      "title": "Social Worker"
+      "title": "Social Worker",
+      "picture": null
     },
     {
       "id": 16,
@@ -148,7 +162,8 @@
       "last_name": "Etherton",
       "location": "Berlin",
       "phone": "715-371-9428",
-      "title": "Director of Sales"
+      "title": "Director of Sales",
+      "picture": null
     },
     {
       "id": 17,
@@ -158,7 +173,8 @@
       "last_name": "Avrashin",
       "location": "Austin",
       "phone": "334-937-8371",
-      "title": "Financial Advisor"
+      "title": "Financial Advisor",
+      "picture": null
     },
     {
       "id": 18,
@@ -168,7 +184,8 @@
       "last_name": "Claige",
       "location": "Austin",
       "phone": "930-119-5193",
-      "title": "Account Representative III"
+      "title": "Account Representative III",
+      "picture": null
     },
     {
       "id": 19,
@@ -178,7 +195,8 @@
       "last_name": "Goering",
       "location": "San Francisco",
       "phone": "437-941-0642",
-      "title": "Staff Scientist"
+      "title": "Staff Scientist",
+      "picture": "https://randomuser.me/api/portraits/men/97.jpg"
     },
     {
       "id": 20,
@@ -188,7 +206,8 @@
       "last_name": "Warde",
       "location": "New York City",
       "phone": "191-233-0757",
-      "title": "Assistant Media Planner"
+      "title": "Assistant Media Planner",
+      "picture": null
     },
     {
       "department": "Product",
@@ -198,7 +217,18 @@
       "location": "New York City",
       "phone": "512-785-4810",
       "title": "Software Engineer",
-      "id": 21
+      "id": 21,
+      "picture": "https://randomuser.me/api/portraits/women/91.jpg"
+    },
+    {
+      "first_name": "Ryan",
+      "last_name": "Ramadar",
+      "department": "Politics",
+      "title": "Political Consultant",
+      "phone": "123-456-7890",
+      "email": "rramadar@fakemail.com",
+      "location": "New York City",
+      "id": 22
     }
   ]
 }
