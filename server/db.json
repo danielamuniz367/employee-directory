@@ -1,0 +1,204 @@
+{
+  "employees": [
+    {
+      "id": 2,
+      "department": "Sales",
+      "email": "eforsyth1@intel.com",
+      "first_name": "Etienne",
+      "last_name": "Forsyth",
+      "location": "New York City",
+      "phone": "246-924-2617",
+      "title": "VP Marketing"
+    },
+    {
+      "id": 3,
+      "department": "Support",
+      "email": "sheaysman2@rakuten.co.jp",
+      "first_name": "Sonnie",
+      "last_name": "Heaysman",
+      "location": "Berlin",
+      "phone": "202-921-2902",
+      "title": "Safety Technician I"
+    },
+    {
+      "id": 4,
+      "department": "Sales",
+      "email": "jbeggs3@youku.com",
+      "first_name": "Johnath",
+      "last_name": "Beggs",
+      "location": "San Francisco",
+      "phone": "949-170-1840",
+      "title": "Marketing Manager"
+    },
+    {
+      "id": 5,
+      "department": "Human Resources",
+      "email": "hlopez4@stanford.edu",
+      "first_name": "Hillier",
+      "last_name": "Lopez",
+      "location": "New York City",
+      "phone": "514-432-3547",
+      "title": "Nurse"
+    },
+    {
+      "id": 6,
+      "department": "Business Development",
+      "email": "wgerbel5@hexun.com",
+      "first_name": "Wynne",
+      "last_name": "Gerbel",
+      "location": "San Francisco",
+      "phone": "740-429-0798",
+      "title": "Legal Assistant"
+    },
+    {
+      "id": 7,
+      "department": "Training",
+      "email": "kbottlestone6@vinaora.com",
+      "first_name": "Kimberli",
+      "last_name": "Bottlestone",
+      "location": "Denver",
+      "phone": "285-790-0743",
+      "title": "Developer I"
+    },
+    {
+      "id": 8,
+      "department": "Services",
+      "email": "ecolgan7@vistaprint.com",
+      "first_name": "Eldin",
+      "last_name": "Colgan",
+      "location": "Seattle",
+      "phone": "289-217-5061",
+      "title": "GIS Technical Architect"
+    },
+    {
+      "id": 9,
+      "department": "Product Management",
+      "email": "mperrone8@ucsd.edu",
+      "first_name": "Marti",
+      "last_name": "Perrone",
+      "location": "Berlin",
+      "phone": "750-517-4806",
+      "title": "Quality Engineer"
+    },
+    {
+      "id": 10,
+      "department": "Human Resources",
+      "email": "owellbeloved9@youtu.be",
+      "first_name": "Oralla",
+      "last_name": "Wellbeloved",
+      "location": "Austin",
+      "phone": "619-362-9302",
+      "title": "Sales Associate"
+    },
+    {
+      "id": 11,
+      "department": "Accounting",
+      "email": "agabitisa@360.cn",
+      "first_name": "Augustine",
+      "last_name": "Gabitis",
+      "location": "Denver",
+      "phone": "486-668-8142",
+      "title": "Senior Financial Analyst"
+    },
+    {
+      "id": 12,
+      "department": "Business Development",
+      "email": "larmisteadb@clickbank.net",
+      "first_name": "Lonnie",
+      "last_name": "Armistead",
+      "location": "Berlin",
+      "phone": "330-566-0601",
+      "title": "Structural Analysis Engineer"
+    },
+    {
+      "id": 13,
+      "department": "Services",
+      "email": "esimanekc@google.ca",
+      "first_name": "Elisha",
+      "last_name": "Simanek",
+      "location": "Berlin",
+      "phone": "493-222-5721",
+      "title": "Structural Analysis Engineer"
+    },
+    {
+      "id": 14,
+      "department": "Marketing",
+      "email": "bankrettd@alibaba.com",
+      "first_name": "Brynna",
+      "last_name": "Ankrett",
+      "location": "San Francisco",
+      "phone": "950-610-6813",
+      "title": "Associate Professor"
+    },
+    {
+      "id": 15,
+      "department": "Human Resources",
+      "email": "jkraute@webs.com",
+      "first_name": "Jenni",
+      "last_name": "Kraut",
+      "location": "Denver",
+      "phone": "685-284-2310",
+      "title": "Social Worker"
+    },
+    {
+      "id": 16,
+      "department": "Research and Development",
+      "email": "dethertonf@mediafire.com",
+      "first_name": "Deloris",
+      "last_name": "Etherton",
+      "location": "Berlin",
+      "phone": "715-371-9428",
+      "title": "Director of Sales"
+    },
+    {
+      "id": 17,
+      "department": "Services",
+      "email": "oavrashing@va.gov",
+      "first_name": "Odetta",
+      "last_name": "Avrashin",
+      "location": "Austin",
+      "phone": "334-937-8371",
+      "title": "Financial Advisor"
+    },
+    {
+      "id": 18,
+      "department": "Support",
+      "email": "cclaigeh@fc2.com",
+      "first_name": "Cynthy",
+      "last_name": "Claige",
+      "location": "Austin",
+      "phone": "930-119-5193",
+      "title": "Account Representative III"
+    },
+    {
+      "id": 19,
+      "department": "Services",
+      "email": "rgoeringi@time.com",
+      "first_name": "Rodrique",
+      "last_name": "Goering",
+      "location": "San Francisco",
+      "phone": "437-941-0642",
+      "title": "Staff Scientist"
+    },
+    {
+      "id": 20,
+      "department": "Services",
+      "email": "cwardej@nps.gov",
+      "first_name": "Clea",
+      "last_name": "Warde",
+      "location": "New York City",
+      "phone": "191-233-0757",
+      "title": "Assistant Media Planner"
+    },
+    {
+      "department": "Product",
+      "email": "danielamuniz@email.com",
+      "first_name": "Daniela",
+      "last_name": "Muniz",
+      "location": "New York City",
+      "phone": "512-785-4810",
+      "title": "Software Engineer",
+      "id": 21
+    }
+  ]
+}
