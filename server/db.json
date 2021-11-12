@@ -4,7 +4,7 @@
       "id": 3,
       "department": "Safety",
       "email": "sheaysman2@rakuten.co.jp",
-      "first_name": "Sonnie",
+      "first_name": "Sonny",
       "last_name": "Heaysman",
       "location": "Berlin",
       "phone": "202-921-2902",
@@ -219,6 +219,16 @@
       "location": "New York City",
       "id": 22,
       "picture": "https://randomuser.me/api/portraits/med/men/8.jpg"
+    },
+    {
+      "first_name": "Test",
+      "last_name": "Test",
+      "department": "Test",
+      "title": "Test",
+      "phone": "1234567891",
+      "email": "test@email.com",
+      "location": "Test",
+      "id": 23
     }
   ]
 }
