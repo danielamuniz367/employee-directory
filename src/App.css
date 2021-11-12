@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
 }
 
 .App-logo {
@@ -13,26 +18,31 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
-.App-link {
-  color: #61dafb;
+#aboutButton {
+  background-color: white;
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+  margin-bottom: 10px;
+  font-family:inherit;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 12px;
+}
+
+.itemImg {
+  min-height: 200px;
+  background-color: #eee;
 }

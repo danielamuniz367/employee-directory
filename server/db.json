@@ -1,19 +1,8 @@
 {
   "employees": [
     {
-      "id": 2,
-      "department": "Sales",
-      "email": "eforsyth1@intel.com",
-      "first_name": "Etienne",
-      "last_name": "Forsyth",
-      "location": "New York City",
-      "phone": "246-924-2617",
-      "title": "VP Marketing",
-      "picture":""
-    },
-    {
       "id": 3,
-      "department": "Support",
+      "department": "Safety",
       "email": "sheaysman2@rakuten.co.jp",
       "first_name": "Sonnie",
       "last_name": "Heaysman",
@@ -24,40 +13,40 @@
     },
     {
       "id": 4,
-      "department": "Sales",
+      "department": "Marketing",
       "email": "jbeggs3@youku.com",
       "first_name": "Johnath",
       "last_name": "Beggs",
       "location": "San Francisco",
       "phone": "949-170-1840",
       "title": "Marketing Manager",
-      "picture":"https://randomuser.me/api/portraits/men/21.jpg"
+      "picture": "https://randomuser.me/api/portraits/men/21.jpg"
     },
     {
       "id": 5,
-      "department": "Human Resources",
+      "department": "Nursing",
       "email": "hlopez4@stanford.edu",
       "first_name": "Hillier",
       "last_name": "Lopez",
       "location": "New York City",
       "phone": "514-432-3547",
       "title": "Nurse",
-      "picture":"https://randomuser.me/api/portraits/women/19.jpg"
+      "picture": "https://randomuser.me/api/portraits/women/19.jpg"
     },
     {
       "id": 6,
-      "department": "Business Development",
+      "department": "Legal",
       "email": "wgerbel5@hexun.com",
       "first_name": "Wynne",
       "last_name": "Gerbel",
       "location": "San Francisco",
       "phone": "740-429-0798",
       "title": "Legal Assistant",
-      "picture":"https://randomuser.me/api/portraits/women/50.jpg"
+      "picture": "https://randomuser.me/api/portraits/women/50.jpg"
     },
     {
       "id": 7,
-      "department": "Training",
+      "department": "Product",
       "email": "kbottlestone6@vinaora.com",
       "first_name": "Kimberli",
       "last_name": "Bottlestone",
@@ -75,22 +64,22 @@
       "location": "Seattle",
       "phone": "289-217-5061",
       "title": "GIS Technical Architect",
-      "picture": null
+      "picture": "https://randomuser.me/api/portraits/med/women/89.jpg"
     },
     {
       "id": 9,
-      "department": "Product Management",
+      "department": "Product",
       "email": "mperrone8@ucsd.edu",
       "first_name": "Marti",
       "last_name": "Perrone",
       "location": "Berlin",
       "phone": "750-517-4806",
       "title": "Quality Engineer",
-      "picture":"https://randomuser.me/api/portraits/women/82.jpg"
+      "picture": "https://randomuser.me/api/portraits/women/82.jpg"
     },
     {
       "id": 10,
-      "department": "Human Resources",
+      "department": "Sales",
       "email": "owellbeloved9@youtu.be",
       "first_name": "Oralla",
       "last_name": "Wellbeloved",
@@ -108,11 +97,11 @@
       "location": "Denver",
       "phone": "486-668-8142",
       "title": "Senior Financial Analyst",
-      "picture":"https://randomuser.me/api/portraits/men/47.jpg"
+      "picture": "https://randomuser.me/api/portraits/men/47.jpg"
     },
     {
       "id": 12,
-      "department": "Business Development",
+      "department": "Product",
       "email": "larmisteadb@clickbank.net",
       "first_name": "Lonnie",
       "last_name": "Armistead",
@@ -141,7 +130,7 @@
       "location": "San Francisco",
       "phone": "950-610-6813",
       "title": "Associate Professor",
-      "picture": null
+      "picture": "https://randomuser.me/api/portraits/med/women/36.jpg"
     },
     {
       "id": 15,
@@ -152,18 +141,18 @@
       "location": "Denver",
       "phone": "685-284-2310",
       "title": "Social Worker",
-      "picture": null
+      "picture": "https://randomuser.me/api/portraits/med/women/49.jpg"
     },
     {
       "id": 16,
-      "department": "Research and Development",
+      "department": "Sales",
       "email": "dethertonf@mediafire.com",
       "first_name": "Deloris",
       "last_name": "Etherton",
       "location": "Berlin",
       "phone": "715-371-9428",
       "title": "Director of Sales",
-      "picture": null
+      "picture": "https://randomuser.me/api/portraits/med/women/70.jpg"
     },
     {
       "id": 17,
@@ -174,7 +163,7 @@
       "location": "Austin",
       "phone": "334-937-8371",
       "title": "Financial Advisor",
-      "picture": null
+      "picture": "https://randomuser.me/api/portraits/med/women/13.jpg"
     },
     {
       "id": 18,
@@ -185,7 +174,7 @@
       "location": "Austin",
       "phone": "930-119-5193",
       "title": "Account Representative III",
-      "picture": null
+      "picture": "https://randomuser.me/api/portraits/med/women/75.jpg"
     },
     {
       "id": 19,
@@ -207,7 +196,7 @@
       "location": "New York City",
       "phone": "191-233-0757",
       "title": "Assistant Media Planner",
-      "picture": null
+      "picture": "https://randomuser.me/api/portraits/med/women/58.jpg"
     },
     {
       "department": "Product",
@@ -228,7 +217,8 @@
       "phone": "123-456-7890",
       "email": "rramadar@fakemail.com",
       "location": "New York City",
-      "id": 22
+      "id": 22,
+      "picture": "https://randomuser.me/api/portraits/med/men/8.jpg"
     }
   ]
 }
