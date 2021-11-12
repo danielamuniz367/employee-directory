@@ -23,19 +23,19 @@ const [data, setData] = useState([])
   const columns = [
     { title: "", field: "picture", render: item => <img src={item.picture} alt="" border="3" height="100" width="100" />},
     { title: "First Name", field: "first_name", 
-    validate:rowData=>rowData.first_name===undefined || rowData.first_name==="" ? "Required" : true},
+    validate:rowData=>rowData.first_name===undefined || rowData.first_name ==="" ? "Required" : true},
     { title: "Last Name", field: "last_name",
-    validate:rowData=>rowData.last_name===undefined || rowData.first_name==="" ? "Required" : true},
+    validate:rowData=>rowData.last_name===undefined || rowData.last_name ==="" ? "Required" : true},
     { title: "Department", field: "department",
-    validate:rowData=>rowData.department===undefined || rowData.first_name==="" ? "Required" : true},
+    validate:rowData=>rowData.department===undefined || rowData.department ==="" ? "Required" : true},
     { title: "Title", field: "title",
-    validate:rowData=>rowData.title===undefined || rowData.first_name==="" ? "Required" : true},
+    validate:rowData=>rowData.title===undefined || rowData.title ==="" ? "Required" : true},
     { title: "Phone", field: "phone",
-    validate:rowData=>rowData.phone===undefined || rowData.first_name==="" ? "Required" : true},
+    validate:rowData=>rowData.phone===undefined || rowData.phone ==="" ? "Required" : true},
     { title: "Email", field: "email",
-    validate:rowData=>rowData.email===undefined || rowData.first_name==="" ? "Required" : true},
+    validate:rowData=>rowData.email===undefined || rowData.email ==="" ? "Required" : true},
     { title: "Location", field: "location",
-    validate:rowData=>rowData.location===undefined || rowData.first_name==="" ? "Required" : true}
+    validate:rowData=>rowData.location===undefined || rowData.location ==="" ? "Required" : true}
   ]
   return (
     <div className="table">
