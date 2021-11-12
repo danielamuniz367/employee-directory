@@ -1,7 +1,3 @@
-import * as fetchUrl from '../../src/constants/constant-urls';
-
-const url = fetchUrl.url;
-
 export function getEmployees() {
     return fetch(url)
       .then(res => res.json());

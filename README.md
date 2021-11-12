@@ -19,6 +19,8 @@ I decided to use React for this project, so I started everything off with creati
 Then I generated random data through https://www.mockaroo.com/ with the specific fields I wanted. After that I then performed a map over the data to randomly generate pictures from https://randomuser.me/. 
 Once I had my data in a clean json format, I added it to a db.json file to then run json-server for my mock-api.
 
+When it came to the state of the data itself, I made use of the useState and useEffect hooks as well as props to then pass data to other components. 
+
 I felt it made sense to create a table, and in my experience I've used Material for
 populating a table that readily had sort, filter, pagination, search, edit, and such.
 With that said I decided to install `material-table`. I followed the examples to achieve (as close as possible) what I wanted to do for this table. Then I tested the api calls with different actions (add, edit, delete) within the table. To clarify, I used the fetch API for these calls. Furthermore, I felt it best to put all the requests in a separate service file. 
@@ -27,6 +29,9 @@ I really wanted to add routing, so I figured it'd be fun to add a grid view as w
 I installed `react-router-dom` in order to achieve this and followed the documentation. Before that, I created a GridView component and moved the MaterialTable code into its own TableView component in order to achieve simple routing. 
 
 Along the way, I added styling and animations with css and Material (and Material UI).
+
+Lastly I'm not sure why but originally the table wasn't overlowing. Oh well. 
+I hope you've liked what I've done!
 
 
 In the project directory, you can run:

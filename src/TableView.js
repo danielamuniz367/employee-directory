@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import MaterialTable from "material-table";
-import { makeStyles } from '@material-ui/core/styles';
 import * as tableIcons from './constants/table-icons'
 import { Link } from "react-router-dom";
 
