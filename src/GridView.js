@@ -5,7 +5,7 @@ export default function GridView(props) {
     console.log(props)
     return (
         <>
-            <Link to="/"><button>Back to Table View</button></Link>
+            <Link to="/"><button className="view-btn">Back to Table View</button></Link>
             <div className="grid">
                 {props.data.map(obj => (<div class="item">  
                 <img key={obj.id} class="itemImg" src={obj.picture}></img>

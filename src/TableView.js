@@ -41,7 +41,7 @@ const [data, setData] = useState([])
     <div className="table">
       <h1 align="center">Employee Directory</h1>
       <Link to="/grid-view">
-        <button>Grid View</button>
+        <button className="view-btn">Grid View</button>
     </Link>
       <MaterialTable
         icons={tableIcons.tableIcons}
