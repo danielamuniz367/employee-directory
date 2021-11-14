@@ -2,23 +2,14 @@ import React, { useEffect, useState } from 'react';
 import MaterialTable from "material-table";
 import * as tableIcons from './constants/table-icons'
 import { Link } from "react-router-dom";
+import {getEmployees, createEmployee, updateEmployee, deleteEmployee} from '../src/services/employees'
 
 function TableView(props){
-const url = "http://localhost:4000/employees";
 const [data, setData] = useState([])
 
   useEffect(() => {
-    getStudents();
+    getEmployees(setData, props);
   }, []) // only for first time i want to exectute this
-  const getStudents= () =>{
-    fetch(url)
-      .then(res => res.json())
-      .then(res => {
-          setData(res)
-          props.update(res);
-        });
-  }
-
 
   const columns = [
     { title: "", field: "picture", render: item => <img src={item.picture} alt="" border="3" height="100" width="100" />},
@@ -57,42 +48,22 @@ const [data, setData] = useState([])
         editable={{
           onRowAdd:(newData)=> new Promise((resolve, reject)=>{
             // backend call
-            fetch(url,{
-              method: 'POST',
-              headers: {
-                'Content-Type': "application/json"
-              },
-              body: JSON.stringify(newData)
-            })
-              .then(res => res.json)
-              .then(res => {getStudents()
+            createEmployee(newData)
+              .then(res => {getEmployees(setData, props)
                 resolve()
               });
           }),
           onRowUpdate:(newData,oldData)=> new Promise((resolve, reject)=>{
             // backend call
-            fetch(`${url}/${oldData.id}`,{
-              method: 'PUT',
-              headers: {
-                'Content-Type': "application/json"
-              },
-              body: JSON.stringify(newData)
-            })
-              .then(res => res.json)
-              .then(res => {getStudents()
+            updateEmployee(newData, oldData)
+              .then(res => {getEmployees(setData, props)
                 resolve()
               });
           }),
           onRowDelete:(oldData)=> new Promise((resolve, reject)=>{
             // backend call
-            fetch(`${url}/${oldData.id}`,{
-              method: 'DELETE',
-              headers: {
-                'Content-Type': "application/json"
-              },
-            })
-              .then(res => res.json)
-              .then(res => {getStudents()
+            deleteEmployee(oldData)
+              .then(res => {getEmployees(setData, props)
                 resolve()
               });
           })

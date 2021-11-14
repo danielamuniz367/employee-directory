@@ -1,6 +1,12 @@
-export function getEmployees() {
+const url = "http://localhost:4000/employees";
+
+export function getEmployees(setData, props) {
     return fetch(url)
-      .then(res => res.json());
+      .then(res => res.json())
+      .then(res => {
+          setData(res)
+          props.update(res);
+        });
 }
 
 export function createEmployee(newData) {
@@ -32,5 +38,5 @@ export function deleteEmployee(oldData){
           'Content-Type': "application/json"
         },
       })
-        .then(res => res.json)
+       .then(res => res.json)
 }
