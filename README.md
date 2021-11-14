@@ -1,7 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## *** TO RUN THIS PROJECT ***
 1.  Within project directory in a terminal, run `npm install` 
 
@@ -29,9 +25,6 @@ I really wanted to add routing, so I figured it'd be fun to add a grid view as w
 I installed `react-router-dom` in order to achieve this and followed the documentation. Before that, I created a GridView component and moved the MaterialTable code into its own TableView component in order to achieve simple routing. 
 
 Along the way, I added styling and animations with css and Material (and Material UI).
-
-Lastly I'm not sure why but originally the table wasn't overlowing. Oh well. 
-I hope you've liked what I've done!
 
 
 In the project directory, you can run:
