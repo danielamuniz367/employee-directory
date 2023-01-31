@@ -1,4 +1,6 @@
-## *** TO RUN THIS PROJECT ***
+## UPDATE: IN THE MIDDLE OF REWRITING IN TYPESCRIPT
+
+##  To run this project
 1.  Within project directory in a terminal, run `npm install` 
 
 2. Navigate to /server directory and run `npm install -g json-server`.
