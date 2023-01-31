@@ -9,9 +9,9 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const [appData, setAppData] = useState();
+  const [appData, setAppData] = useState({a: "a", b: 12});
 
-  const updateData = (data) => {
+  const updateData = (data: any) => {
     setAppData(data);
   }
 
@@ -19,9 +19,9 @@ function App() {
     <div className="App">
     <Router>
       <Routes>
-          <Route path="/" element={<TableView update={updateData}/>}>
+          <Route path="/" element={<TableView {...appData} />}>
           </Route>
-          <Route path="/grid-view" element={<GridView data={appData}/>}>
+          <Route path="/grid-view" element={<GridView />}>
           </Route>
         </Routes>
       </Router>

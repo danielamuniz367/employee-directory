@@ -5,7 +5,7 @@ export function getEmployees(setData, props) {
       .then(res => res.json())
       .then(res => {
           setData(res)
-          props.update(res);
+        //   props.update(res);
         });
 }
 
