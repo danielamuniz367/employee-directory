@@ -1,6 +1,7 @@
-## UPDATE: CURRENTLY REWRITING THIS IN TYPESCRIPT ##
+## UPDATE: CURRENTLY REWRITING THIS IN TYPESCRIPT. 
 
 ## To Run This Project ##
+Note: Packages originally used are deprecated, so I'm working on redoing this with the newest version of Material UI.
 1.  Within project directory in a terminal, run `npm install` 
 
 2. Navigate to /server directory and run `npm install -g json-server`.
