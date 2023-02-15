@@ -1,18 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Store } from './store';
 import './App.css';
 import Employees from './components/Employees';
 import EmployeeTable from './components/EmployeeTable';
+import FeaturedEmployee from './components/FeaturedEmployee';
 
 function App() {
-  const [data, setData] = useState("");
-  const updateData = (data: any) => {
-    setData(data);
-  }
-
   return (
     <Store>
       <Employees />
+      <FeaturedEmployee />
       <EmployeeTable />
     </Store>
   )

@@ -33,7 +33,7 @@ const EmployeeTable = () => {
                 </TableHead>
                 <TableBody>
                     {
-                        data && data.map((emp, idx, []) => (
+                        data && data.map((emp, idx) => (
                             <TableRow>
                                 {
                                     Object.entries(emp).map(([key, value]) => (

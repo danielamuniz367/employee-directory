@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../store";
 import { getEmployees } from "../services/employees";
 
@@ -7,12 +7,8 @@ const Employees = () => {
 
     useEffect(() => {
         console.log('rendered')
-        fetchData();
-    }, [])
-
-    const fetchData = () => {
         getEmployees(setData);
-    }
+    }, [setData])
 
     return (
         <div className="employee-info">
