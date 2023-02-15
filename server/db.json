@@ -197,38 +197,6 @@
       "phone": "191-233-0757",
       "title": "Assistant Media Planner",
       "picture": "https://randomuser.me/api/portraits/med/women/58.jpg"
-    },
-    {
-      "department": "Product",
-      "email": "danielamuniz@email.com",
-      "first_name": "Daniela",
-      "last_name": "Muniz",
-      "location": "New York City",
-      "phone": "512-785-4810",
-      "title": "Software Engineer",
-      "id": 21,
-      "picture": "https://randomuser.me/api/portraits/women/91.jpg"
-    },
-    {
-      "first_name": "Ryan",
-      "last_name": "Ramadar",
-      "department": "Politics",
-      "title": "Political Consultant",
-      "phone": "123-456-7890",
-      "email": "rramadar@fakemail.com",
-      "location": "New York City",
-      "id": 22,
-      "picture": "https://randomuser.me/api/portraits/med/men/8.jpg"
-    },
-    {
-      "first_name": "Test",
-      "last_name": "Test",
-      "department": "Test",
-      "title": "Test",
-      "phone": "5127854810",
-      "email": "test",
-      "location": "Test",
-      "id": 23
     }
   ]
 }
