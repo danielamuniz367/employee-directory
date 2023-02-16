@@ -14,7 +14,7 @@ const FeaturedEmployee = () => {
     }, [data]);
 
     return (
-        <div>
+        <div className="featured-employee">
             <h4>Featured Employee</h4>
             <CardContent>
             {

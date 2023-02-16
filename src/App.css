@@ -13,6 +13,14 @@
   pointer-events: none;
 }
 
+.employee-info, .featured-employee {
+  padding: 1rem;
+}
+
+.featured-employee h4 {
+  margin: 0;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
