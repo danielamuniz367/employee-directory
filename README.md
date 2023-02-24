@@ -1,4 +1,4 @@
-## UPDATE: CURRENTLY REWRITING THIS IN TYPESCRIPT. 
+## Update: Project is being rewritten in Typescript with Material UI upgrade. View latest changes in the `ts` branch.
 
 ## To Run This Project ##
 Note: Packages originally used are deprecated, so I'm working on redoing this with the newest version of Material UI.
