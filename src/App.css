@@ -17,8 +17,8 @@
   padding: 1rem;
 }
 
-.featured-employee h4 {
-  margin: 0;
+.featured-employee {
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {

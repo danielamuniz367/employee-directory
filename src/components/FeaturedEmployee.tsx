@@ -1,10 +1,12 @@
 import { CardContent } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store";
+import './FeaturedEmployee.css';
 
 const FeaturedEmployee = () => {
     const { data } = useContext(Context);
-    const [featured, setFeatured] = useState<object>({});
+    const [featured, setFeatured] = useState<any>({});
+    const { picture, first_name, last_name, department, location } = featured;
 
     useEffect(() => {
         if(data){
@@ -17,11 +19,10 @@ const FeaturedEmployee = () => {
         <div className="featured-employee">
             <h4>Featured Employee</h4>
             <CardContent>
-            {
-                featured && Object.entries(featured).map(([key, value]) => (
-                    <div>{key} : {value}</div>
-                ))
-            }
+                <img src={ picture } />
+                <div>{first_name} {last_name}</div>
+                <div>{department}</div>
+                <div>{location}</div>
             </CardContent>
         </div>
     )
