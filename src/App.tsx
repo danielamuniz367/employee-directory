@@ -9,7 +9,6 @@ import * as ROUTES from './constants/routes';
 import { Store } from './store';
 import './App.css';
 import Employees from './components/Employees';
-import FeaturedEmployee from './components/FeaturedEmployee';
 import EmployeesGrid from './components/EmployeesGrid';
 
 // when you want to use React Router, the best way to start is with a navigation component that will
@@ -23,9 +22,6 @@ function App() {
 
       <hr />
       <Store>
-        {/* <Employees />
-        <FeaturedEmployee />
-        <EmployeeTable /> */}
         <Routes>
           <Route path={ROUTES.LANDING} element={<Employees />}></Route>
           <Route path={ROUTES.DIRECTORY} element={<EmployeesGrid />}></Route>
