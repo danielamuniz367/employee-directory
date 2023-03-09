@@ -14,10 +14,10 @@ interface Inputs {
     phone: string
 }
 
-const EmployeeModal = ({ onClose, onModalDataUpdate, sentModalData } : any) => {
+const EmployeeModal = ({ onClose, onModalDataUpdate }: any) => {
     const [modalData, setModalData] = useState<Inputs>();
-
     const { register, setValue, handleSubmit } = useForm<Inputs>();
+    const { action, data } = onModalDataUpdate();
 
     const onSubmit = async (data: Inputs) => {
         setModalData(data);
@@ -25,18 +25,18 @@ const EmployeeModal = ({ onClose, onModalDataUpdate, sentModalData } : any) => {
 
     const dataToTable = useCallback((data: any) => {
         onModalDataUpdate(data);
-    }, [onModalDataUpdate])
+    }, [onModalDataUpdate]);
 
-    useEffect(()=>{
-        if(modalData) dataToTable(modalData);
-        // if(sentModalData) {
-        //     const properties = sentModalData();
-        //     const propKeys = Object.keys(properties);
-        //     propKeys.map((key: any) => {
-        //         return setValue(key, properties[key]);
-        //     })
-        // }
-    },[onSubmit, dataToTable])
+    useEffect(() => {
+        if (action === "add") dataToTable(modalData);
+        else {
+            const properties = data;
+            const propKeys = Object.keys(properties);
+            propKeys.map((key: any) => {
+                return setValue(key, properties[key]);
+            })
+        }
+    }, [onSubmit, dataToTable])
 
     return (
         <div className="modal">

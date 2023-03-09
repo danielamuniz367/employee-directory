@@ -7,7 +7,7 @@ const Employees = () => {
     const { setData } = useContext(Context);
 
     useEffect(() => {
-        console.log('rendered')
+        console.log('employees rendered')
         getEmployees(setData);
     }, [setData])
 

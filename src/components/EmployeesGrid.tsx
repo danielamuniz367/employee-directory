@@ -20,18 +20,16 @@ const EmployeesGrid = () => {
     const [action, setAction] = useState<string>('');
 
     // get modal form data for row adds/edits
-    const getModalData = ( data: any) => {
-        console.log('getting modal data');
+    const getModalData = (data: any) => {
         if (data) {
             setModalData(data);
         }
+        return { action: "add"};
     }
 
     // send data from table to modal form
-    const prepModalData = (action: any) => {
-        console.log('prepping modal data');
-        console.log(modalData);
-        return modalData;
+    const prepModalData = () => {
+        return {action: "edit", data: modalData};
     }
 
     // add row
@@ -59,6 +57,8 @@ const EmployeesGrid = () => {
     const handleOpenModal = (action: string, row?: any) => {
         setAction(action);
         setShowModal(true);
+        console.log('open modal action', action);
+        if(action==="edit") setModalData(row.row.original);
     }
 
     const handleCloseModal = () => {
@@ -71,10 +71,10 @@ const EmployeesGrid = () => {
         if (action === "add" && modalData) {
             handleAddRow(modalData);
         }
-        // else if (action === "edit" && modalData) {
-        //     handleEditRow(modalData);
-        // }
-    }, [modalData])
+        else if (action === "edit" && modalData) {
+            handleEditRow(modalData);
+        }
+    }, [action, modalData])
 
     const columns: any = useMemo(
         () => [
