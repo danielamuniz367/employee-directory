@@ -15,24 +15,11 @@ interface Inputs {
 }
 
 const EmployeeModal = ({ onClose, onModalDataUpdate, sentModalData } : any) => {
-    // const [id, setId] = useState<number>();
-    // const [firstName, setFirstName] = useState<string>();
-    // const [lastName, setLastName] = useState<string>();
-    // const [title, setTitle] = useState<string>();
-    // const [department, setDepartment] = useState<string>();
-    // const [location, setLocation] = useState<string>();
-    // const [phoneNumber, setPhoneNumber] = useState<string>();
     const [modalData, setModalData] = useState<Inputs>();
 
     const { register, setValue, handleSubmit } = useForm<Inputs>();
 
     const onSubmit = async (data: Inputs) => {
-        // setFirstName(data.first_name);
-        // setLastName(data.last_name);
-        // setTitle(data.title);
-        // setDepartment(data.department);
-        // setLocation(data.location);
-        // setPhoneNumber(data.phone);
         setModalData(data);
     };
 
