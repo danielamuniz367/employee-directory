@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import './EmployeeModal.css';
 
@@ -14,7 +14,7 @@ interface Inputs {
     phone: string
 }
 
-const EmployeeModal = ({ onClose, onModalDataUpdate } : any) => {
+const EmployeeModal = ({ onClose, onModalDataUpdate, sentModalData } : any) => {
     // const [id, setId] = useState<number>();
     // const [firstName, setFirstName] = useState<string>();
     // const [lastName, setLastName] = useState<string>();
@@ -24,7 +24,7 @@ const EmployeeModal = ({ onClose, onModalDataUpdate } : any) => {
     // const [phoneNumber, setPhoneNumber] = useState<string>();
     const [modalData, setModalData] = useState<Inputs>();
 
-    const { register, handleSubmit } = useForm<Inputs>();
+    const { register, setValue, handleSubmit } = useForm<Inputs>();
 
     const onSubmit = async (data: Inputs) => {
         // setFirstName(data.first_name);
@@ -36,13 +36,20 @@ const EmployeeModal = ({ onClose, onModalDataUpdate } : any) => {
         setModalData(data);
     };
 
-    const dataToTable = (data: any) => {
+    const dataToTable = useCallback((data: any) => {
         onModalDataUpdate(data);
-    }
+    }, [])
 
     useEffect(()=>{
-        if(modalData) dataToTable(modalData);
-    },[modalData])
+        if(onModalDataUpdate) dataToTable(modalData);
+        if(sentModalData) {
+            const properties = sentModalData();
+            const propKeys = Object.keys(properties);
+            propKeys.map((key: any) => {
+                return setValue(key, properties[key]);
+            });
+        }
+    },[sentModalData, modalData, dataToTable])
 
     return (
         <div className="modal">

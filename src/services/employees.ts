@@ -6,15 +6,16 @@ export async function getEmployees(setData: (data: any) => void) {
     setData(employeesData);
 }
 
-export function createEmployee(newData: any) {
-    return fetch(url, {
+export async function createEmployee(newData: any) {
+    const newEmployee = await fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': "application/json"
         },
         body: JSON.stringify(newData)
-    })
-        .then(res => res.json);
+    });
+    const newEmployeeJson = newEmployee.json()
+    return newEmployeeJson;
 }
 
 export function updateEmployee(newData: any, oldData: { id: any; }) {

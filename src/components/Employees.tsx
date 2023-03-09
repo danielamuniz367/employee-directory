@@ -4,7 +4,7 @@ import FeaturedEmployee from "./FeaturedEmployee";
 import { getEmployees } from "../services/employees";
 
 const Employees = () => {
-    const { data, setData } = useContext(Context);
+    const { setData } = useContext(Context);
 
     useEffect(() => {
         console.log('rendered')
