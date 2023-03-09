@@ -25,18 +25,18 @@ const EmployeeModal = ({ onClose, onModalDataUpdate, sentModalData } : any) => {
 
     const dataToTable = useCallback((data: any) => {
         onModalDataUpdate(data);
-    }, [])
+    }, [onModalDataUpdate])
 
     useEffect(()=>{
-        if(onModalDataUpdate) dataToTable(modalData);
-        if(sentModalData) {
-            const properties = sentModalData();
-            const propKeys = Object.keys(properties);
-            propKeys.map((key: any) => {
-                return setValue(key, properties[key]);
-            });
-        }
-    },[sentModalData, modalData, dataToTable])
+        if(modalData) dataToTable(modalData);
+        // if(sentModalData) {
+        //     const properties = sentModalData();
+        //     const propKeys = Object.keys(properties);
+        //     propKeys.map((key: any) => {
+        //         return setValue(key, properties[key]);
+        //     })
+        // }
+    },[onSubmit, dataToTable])
 
     return (
         <div className="modal">

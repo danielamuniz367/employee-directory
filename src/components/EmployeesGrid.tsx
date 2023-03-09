@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useMemo } from "react";
+import React, { useContext, useEffect, useState, useMemo, useCallback } from "react";
 import { Context } from "../store";
 import { useTable } from 'react-table';
 import './EmployeesGrid.css';
@@ -7,39 +7,44 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import AddIcon from '@mui/icons-material/Add';
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { createEmployee, deleteEmployee, getEmployees, updateEmployee } from '../services/employees';
+import { createEmployee, deleteEmployee, updateEmployee } from '../services/employees';
 import { createPortal } from 'react-dom';
 import EmployeeModal from "./EmployeeModal";
 
 
 const EmployeesGrid = () => {
-    const { data, setData } = useContext(Context);
+    const { data } = useContext(Context);
     const [employeeData, setEmployeeData] = useState(useMemo(() => data, []));
     const [showModal, setShowModal] = useState<boolean>(false);
     const [modalData, setModalData] = useState<any>();
     const [action, setAction] = useState<string>('');
 
     // get modal form data for row adds/edits
-    const getModalData = (data: any) => {
+    const getModalData = ( data: any) => {
         console.log('getting modal data');
-        if(data) {
+        if (data) {
             setModalData(data);
         }
     }
 
-    // add row
-    const handleAddRow = async () => {
-        setAction('add');
-        setShowModal(true);
-        // const dataCopy = [...employeeData];
-        // dataCopy.push(data);
-        // setEmployeeData(dataCopy);
+    // send data from table to modal form
+    const prepModalData = (action: any) => {
+        console.log('prepping modal data');
+        console.log(modalData);
+        return modalData;
     }
+
+    // add row
+    const handleAddRow = useCallback(async (modalData: any) => {
+        const employee = await createEmployee(modalData);
+        const dataCopy = [...employeeData];
+        dataCopy.push(employee);
+        setEmployeeData(dataCopy);
+    }, [])
 
     // edit row
     const handleEditRow = (row: object) => {
-        setAction('edit');
-        setShowModal(true);
+        setModalData(row);
     }
 
     // delete row
@@ -51,10 +56,25 @@ const EmployeesGrid = () => {
         await deleteEmployee(toDelete);
     }
 
+    const handleOpenModal = (action: string, row?: any) => {
+        setAction(action);
+        setShowModal(true);
+    }
+
     const handleCloseModal = () => {
         setShowModal(false);
         setAction('');
+        setModalData('');
     }
+
+    useEffect(() => {
+        if (action === "add" && modalData) {
+            handleAddRow(modalData);
+        }
+        // else if (action === "edit" && modalData) {
+        //     handleEditRow(modalData);
+        // }
+    }, [modalData])
 
     const columns: any = useMemo(
         () => [
@@ -91,7 +111,7 @@ const EmployeesGrid = () => {
                 accessor: 'actions',
                 Cell: (row: any) => (
                     <div>
-                        <EditIcon onClick={_e => handleEditRow(row)}></EditIcon>
+                        <EditIcon onClick={_e => handleOpenModal('edit', row)}></EditIcon>
                         <DeleteIcon onClick={_e => handleDeleteRow(row)}></DeleteIcon>
                     </div>
                 )
@@ -113,9 +133,9 @@ const EmployeesGrid = () => {
         <Box className="employee-directory" style={{ height: 700, width: '100%' }}>
             <h3>Employee Directory</h3>
             <Box>
-                <Box><Button onClick={handleAddRow}><AddIcon></AddIcon>Add new employee</Button></Box>
+                <Box><Button onClick={_e => handleOpenModal('add')}><AddIcon></AddIcon>Add new employee</Button></Box>
                 {showModal && createPortal(
-                    <EmployeeModal onClose={handleCloseModal} onModalDataUpdate={getModalData} />,
+                    <EmployeeModal onClose={handleCloseModal} onModalDataUpdate={action === "add" ? getModalData : prepModalData} />,
                     document.body
                 )}
                 <table {...getTableProps}>
