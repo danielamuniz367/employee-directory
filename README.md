@@ -1,34 +1,34 @@
 ## UPDATE: IN THE MIDDLE OF REWRITING IN TYPESCRIPT
+
 - Take a look at the `ts` branch to see these changes
 
-##  To run this project
-1.  Within project directory in a terminal, run `npm install` 
+## To run this project
 
-2. Navigate to /server directory and run `npm install -g json-server`.
-    Then run `npm start`. Navigate to http://localhost:4000/employees to see the data. You can also see changes reflected in db.json as you make updates. 
+1.  Within project directory in a terminal, run `npm install`
 
-3. Then open another terminal and make sure you're at the root level of project. 
+2.  Navigate to /server directory and run `npm install -g json-server`.
+    Then run `npm start`. Navigate to http://localhost:4000/employees to see the data. You can also see changes reflected in db.json as you make updates.
+
+3.  Then open another terminal and make sure you're at the root level of project.
     Run `npm start`
-
 
 ## Notes about the creation of this project
 
 I decided to use React for this project, so I started everything off with creating a directory and running `npx create-react-app .` within the directory.
 
-Then I generated random data through https://www.mockaroo.com/ with the specific fields I wanted. After that I then performed a map over the data to randomly generate pictures from https://randomuser.me/. 
+Then I generated random data through https://www.mockaroo.com/ with the specific fields I wanted. After that I then performed a map over the data to randomly generate pictures from https://randomuser.me/.
 Once I had my data in a clean json format, I added it to a db.json file to then run json-server for my mock-api.
 
-When it came to the state of the data itself, I made use of the useState and useEffect hooks as well as props to then pass data to other components. 
+When it came to the state of the data itself, I made use of the useState and useEffect hooks as well as props to then pass data to other components.
 
 I felt it made sense to create a table, and in my experience I've used Material for
 populating a table that readily had sort, filter, pagination, search, edit, and such.
-With that said I decided to install `material-table`. I followed the examples to achieve (as close as possible) what I wanted to do for this table. Then I tested the api calls with different actions (add, edit, delete) within the table. To clarify, I used the fetch API for these calls. Furthermore, I felt it best to put all the requests in a separate service file. 
+With that said I decided to install `material-table`. I followed the examples to achieve (as close as possible) what I wanted to do for this table. Then I tested the api calls with different actions (add, edit, delete) within the table. To clarify, I used the fetch API for these calls. Furthermore, I felt it best to put all the requests in a separate service file.
 
-I really wanted to add routing, so I figured it'd be fun to add a grid view as well. 
-I installed `react-router-dom` in order to achieve this and followed the documentation. Before that, I created a GridView component and moved the MaterialTable code into its own TableView component in order to achieve simple routing. 
+I really wanted to add routing, so I figured it'd be fun to add a grid view as well.
+I installed `react-router-dom` in order to achieve this and followed the documentation. Before that, I created a GridView component and moved the MaterialTable code into its own TableView component in order to achieve simple routing.
 
 Along the way, I added styling and animations with css and Material (and Material UI).
-
 
 In the project directory, you can run:
 

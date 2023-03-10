@@ -1,23 +1,21 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState } from 'react';
 
 type EmployeeData = {
-    data: Array<object>,
-    setData: React.Dispatch<React.SetStateAction<Array<object>>>
+  data: Array<object>;
+  setData: React.Dispatch<React.SetStateAction<Array<object>>>;
 };
 
-export const Context = createContext<EmployeeData>(undefined as unknown as EmployeeData);
+export const Context = createContext<EmployeeData>(
+  undefined as unknown as EmployeeData
+);
 
 type Props = {
-    children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 export const Store = ({ children }: Props) => {
-    const [data, setData] = useState([{}]);
-    const value = {data, setData};
+  const [data, setData] = useState([{}]);
+  const value = { data, setData };
 
-    return (
-        <Context.Provider value={value}>
-            {children}
-        </Context.Provider>
-    )
-}
+  return <Context.Provider value={value}>{children}</Context.Provider>;
+};

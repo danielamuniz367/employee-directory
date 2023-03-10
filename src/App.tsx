@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as ROUTES from './constants/routes';
 
 import { Store } from './store';
@@ -28,7 +24,7 @@ function App() {
         </Routes>
       </Store>
     </Router>
-  )
+  );
 }
 
 export default App;

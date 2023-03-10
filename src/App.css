@@ -13,7 +13,8 @@
   pointer-events: none;
 }
 
-.employee-info, .featured-employee {
+.employee-info,
+.featured-employee {
   padding: 1rem;
 }
 
@@ -28,12 +29,12 @@
 }
 
 @keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #aboutButton {
@@ -42,7 +43,7 @@
   width: 150px;
   height: 30px;
   margin-bottom: 10px;
-  font-family:inherit;
+  font-family: inherit;
 }
 
 .grid {
