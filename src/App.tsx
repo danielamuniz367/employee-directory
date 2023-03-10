@@ -6,6 +6,7 @@ import { Store } from './store';
 import './App.css';
 import Employees from './components/Employees';
 import EmployeesGrid from './components/EmployeesGrid';
+import FeaturedEmployee from './components/FeaturedEmployee';
 
 // when you want to use React Router, the best way to start is with a navigation component that will
 // be used in the App component.
@@ -20,6 +21,7 @@ function App() {
       <Store>
         <Routes>
           <Route path={ROUTES.LANDING} element={<Employees />}></Route>
+          <Route path={ROUTES.GRID} element={<FeaturedEmployee />}></Route>
           <Route path={ROUTES.DIRECTORY} element={<EmployeesGrid />}></Route>
         </Routes>
       </Store>
