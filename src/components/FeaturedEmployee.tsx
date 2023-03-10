@@ -12,7 +12,7 @@ const FeaturedEmployee = () => {
       <Grid container spacing={4}>
         {
           data.map((employee: any) => (
-            <Grid item xs={3}>
+            <Grid item xs={3} key={employee.id}>
               <CardContent>
                 <img src={employee.picture} />
                 <div>

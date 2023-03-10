@@ -25,7 +25,7 @@ const EmployeesGrid = () => {
         if (data) {
             setModalData(data);
         }
-        return { action: "add"};
+        return { action: "add" };
     }
 
     // send data from table to modal form
@@ -33,7 +33,7 @@ const EmployeesGrid = () => {
         console.log('prep');
         setModalData(data);
         handleEditRow(rowData);
-        return {action: "edit", data: modalData};
+        return { action: "edit", data: modalData };
     }
 
     // add row
@@ -45,8 +45,8 @@ const EmployeesGrid = () => {
     }, [])
 
     // edit row
-    const handleEditRow = async(row: any) => {
-        if(row && modalData) {
+    const handleEditRow = async (row: any) => {
+        if (row && modalData) {
             const oldData = data[row.row.index];
             const employee = await updateEmployee(modalData, oldData);
             console.log("employee edited", employee);
@@ -69,7 +69,7 @@ const EmployeesGrid = () => {
         setShowModal(true);
         setAction(action);
         setRowData(row);
-        if(action==="edit") {
+        if (action === "edit") {
             console.log('data', row.row.original);
             setModalData(row.row.original);
         }
@@ -155,9 +155,9 @@ const EmployeesGrid = () => {
                 <table {...getTableProps}>
                     <thead>
                         {headerGroups.map(headerGroup => (
-                            <tr {...headerGroup.getHeaderGroupProps()}>
+                            <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
                                 {headerGroup.headers.map(column => (
-                                    <th {...column.getHeaderProps()}>
+                                    <th {...column.getHeaderProps()} key={column.id}>
                                         {column.render('Header')}
                                     </th>
                                 ))}
@@ -165,19 +165,16 @@ const EmployeesGrid = () => {
                         ))}
                     </thead>
                     <tbody {...getTableBodyProps()}>
-                        {// Loop over the table rows
+                        {
                             rows.map(row => {
-                                // Prepare the row for display
                                 prepareRow(row)
                                 return (
-                                    // Apply the row props
-                                    <tr {...row.getRowProps()}>
-                                        {// Loop over the rows cells
+                                    <tr {...row.getRowProps()} key={row.id}>
+                                        {
                                             row.cells.map(cell => {
-                                                // Apply the cell props
                                                 return (
-                                                    <td {...cell.getCellProps()}>
-                                                        {// Render the cell contents
+                                                    <td {...cell.getCellProps()} key={cell.row.id}>
+                                                        {
                                                             cell.render('Cell')}
                                                     </td>
                                                 )
