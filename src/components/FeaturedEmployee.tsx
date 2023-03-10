@@ -1,19 +1,10 @@
 import { CardContent, Grid } from '@mui/material';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Context } from '../store';
 import './FeaturedEmployee.css';
 
 const FeaturedEmployee = () => {
   const { data } = useContext(Context);
-  // const [featured, setFeatured] = useState<any>({});
-  // const { picture, first_name, last_name, department, location } = data;
-
-  useEffect(() => {
-    // if (data) {
-    //   const randomIdx = Math.floor(Math.random() * data.length);
-    //   setFeatured(data[randomIdx]);
-    // }
-  }, [data]);
 
   return (
     <div className="featured-employee">

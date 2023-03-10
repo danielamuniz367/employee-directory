@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState, useMemo, useCallback } from "re
 import { Context } from "../store";
 import { useTable } from 'react-table';
 import './EmployeesGrid.css';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
+import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import AddIcon from '@mui/icons-material/Add';
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -125,8 +125,8 @@ const EmployeesGrid = () => {
                 accessor: 'actions',
                 Cell: (row: any) => (
                     <div>
-                        <EditIcon onClick={_e => handleOpenModal('edit', row)}></EditIcon>
-                        <DeleteIcon onClick={_e => handleDeleteRow(row)}></DeleteIcon>
+                        <ModeEditOutlinedIcon onClick={_e => handleOpenModal('edit', row)}></ModeEditOutlinedIcon>
+                        <DeleteOutlinedIcon onClick={_e => handleDeleteRow(row)}></DeleteOutlinedIcon>
                     </div>
                 )
             }
@@ -144,7 +144,7 @@ const EmployeesGrid = () => {
     } = tableInstance;
 
     return (
-        <Box className="employee-directory" style={{ height: 700, width: '100%' }}>
+        <Box className="employee-directory" style={{ height: 700, width: '90%' }}>
             <h3>Employee Directory</h3>
             <Box>
                 <Box><Button onClick={_e => handleOpenModal('add')}><AddIcon></AddIcon>Add new employee</Button></Box>

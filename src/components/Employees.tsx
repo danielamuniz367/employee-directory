@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react';
 import { Context } from '../store';
-import FeaturedEmployee from './FeaturedEmployee';
 import { getEmployees } from '../services/employees';
 
 const Employees = () => {

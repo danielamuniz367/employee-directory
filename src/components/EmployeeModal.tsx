@@ -11,7 +11,8 @@ interface Inputs {
     title: string,
     department: string,
     location: string,
-    phone: string
+    phone: string,
+    picture: string
 }
 
 const EmployeeModal = ({ onClose, onModalDataUpdate }: any) => {
@@ -54,6 +55,8 @@ const EmployeeModal = ({ onClose, onModalDataUpdate }: any) => {
                     label="Location" id="location" name="location" variant="standard" />
                 <TextField {...register('phone', { required: true })}
                     label="Phone Number" id="phone" name="phone" variant="standard" />
+                <TextField {...register('picture', { required: true })}
+                    label="Picture" id="picture" name="picture" variant="standard" />
                 <Button type="submit" onClick={_e => dataToTable}>Submit</Button>
             </form>
             <Button onClick={onClose}>Close</Button>
