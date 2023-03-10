@@ -17,6 +17,7 @@ const EmployeesGrid = () => {
     const [employeeData, setEmployeeData] = useState(useMemo(() => data, []));
     const [showModal, setShowModal] = useState<boolean>(false);
     const [modalData, setModalData] = useState<any>();
+    const [rowData, setRowData] = useState<any>();
     const [action, setAction] = useState<string>('');
 
     // get modal form data for row adds/edits
@@ -28,7 +29,10 @@ const EmployeesGrid = () => {
     }
 
     // send data from table to modal form
-    const prepModalData = () => {
+    const prepModalData = (data: any) => {
+        console.log('prep');
+        setModalData(data);
+        handleEditRow(rowData);
         return {action: "edit", data: modalData};
     }
 
@@ -41,8 +45,15 @@ const EmployeesGrid = () => {
     }, [])
 
     // edit row
-    const handleEditRow = (row: object) => {
-        setModalData(row);
+    const handleEditRow = async(row: any) => {
+        if(row && modalData) {
+            const oldData = data[row.row.index];
+            const employee = await updateEmployee(modalData, oldData);
+            console.log("employee edited", employee);
+            const dataCopy = [...employeeData];
+            dataCopy[row.row.index] = employee;
+            setEmployeeData(dataCopy);
+        }
     }
 
     // delete row
@@ -55,10 +66,13 @@ const EmployeesGrid = () => {
     }
 
     const handleOpenModal = (action: string, row?: any) => {
-        setAction(action);
         setShowModal(true);
-        console.log('open modal action', action);
-        if(action==="edit") setModalData(row.row.original);
+        setAction(action);
+        setRowData(row);
+        if(action==="edit") {
+            console.log('data', row.row.original);
+            setModalData(row.row.original);
+        }
     }
 
     const handleCloseModal = () => {
@@ -71,9 +85,9 @@ const EmployeesGrid = () => {
         if (action === "add" && modalData) {
             handleAddRow(modalData);
         }
-        else if (action === "edit" && modalData) {
-            handleEditRow(modalData);
-        }
+        // else if (action === "edit" && modalData) {
+        //     handleEditRow(modalData);
+        // }
     }, [action, modalData])
 
     const columns: any = useMemo(

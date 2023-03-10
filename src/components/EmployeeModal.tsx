@@ -21,6 +21,7 @@ const EmployeeModal = ({ onClose, onModalDataUpdate }: any) => {
 
     const onSubmit = async (data: Inputs) => {
         setModalData(data);
+        if(action==="edit") dataToTable(data);
     };
 
     const dataToTable = useCallback((data: any) => {
@@ -29,11 +30,10 @@ const EmployeeModal = ({ onClose, onModalDataUpdate }: any) => {
 
     useEffect(() => {
         if (action === "add") dataToTable(modalData);
-        else {
-            const properties = data;
-            const propKeys = Object.keys(properties);
+        else if(action === "edit" && data) {
+            const propKeys = Object.keys(data);
             propKeys.map((key: any) => {
-                return setValue(key, properties[key]);
+                return setValue(key, data[key]);
             })
         }
     }, [onSubmit, dataToTable])

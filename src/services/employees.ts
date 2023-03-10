@@ -18,15 +18,16 @@ export async function createEmployee(newData: any) {
     return newEmployeeJson;
 }
 
-export function updateEmployee(newData: any, oldData: { id: any; }) {
-    return fetch(`${url}/${oldData.id}`, {
+export async function updateEmployee(newData: any, oldData: any) {
+    const updatedEmployee = await fetch(`${url}/${oldData.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': "application/json"
         },
         body: JSON.stringify(newData)
-    })
-        .then(res => res.json)
+    });
+    const updatedEmployeeJson = updatedEmployee.json()
+    return updatedEmployeeJson;
 }
 
 export function deleteEmployee(oldData: { id: any; }) {
