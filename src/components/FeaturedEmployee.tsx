@@ -1,10 +1,16 @@
 import { CardContent, Grid, Typography } from '@mui/material';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Context } from '../store';
+import { getEmployees } from '../services/employees';
 import './FeaturedEmployee.css';
 
 const FeaturedEmployee = () => {
-  const { data } = useContext(Context);
+  const [ data, setData]  = useContext(Context);
+
+    useEffect(() => {
+    console.log('employees grid rendered');
+    getEmployees(setData);
+  }, []);
 
   return (
     <div className="featured-employee">

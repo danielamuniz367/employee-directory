@@ -8,7 +8,7 @@ import Employees from './components/Employees';
 import EmployeesGrid from './components/EmployeesGrid';
 import FeaturedEmployee from './components/FeaturedEmployee';
 
-// when you want to use React Router, the best way to start is with a navigation component that will
+// note to self: when you want to use React Router, the best way to start is with a navigation component that will
 // be used in the App component.
 import Navigation from './components/Navigation';
 
@@ -16,7 +16,6 @@ function App() {
   return (
     <Router>
       <Navigation />
-
       <hr />
       <Store>
         <Routes>

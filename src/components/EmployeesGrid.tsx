@@ -7,13 +7,13 @@ import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import AddIcon from '@mui/icons-material/Add';
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { createEmployee, deleteEmployee, updateEmployee } from '../services/employees';
+import { getEmployees, createEmployee, deleteEmployee, updateEmployee } from '../services/employees';
 import { createPortal } from 'react-dom';
 import EmployeeModal from "./EmployeeModal";
 
 
 const EmployeesGrid = () => {
-    const { data } = useContext(Context);
+    const [ data, setData ] = useContext(Context);
     const [employeeData, setEmployeeData] = useState(useMemo(() => data, []));
     const [showModal, setShowModal] = useState<boolean>(false);
     const [modalData, setModalData] = useState<any>();
@@ -80,6 +80,11 @@ const EmployeesGrid = () => {
         setAction('');
         setModalData('');
     }
+
+    useEffect(() => {
+        console.log('employees table rendered');
+        getEmployees(setData);
+      }, []);
 
     useEffect(() => {
         if (action === "add" && modalData) {
@@ -169,11 +174,11 @@ const EmployeesGrid = () => {
                             rows.map(row => {
                                 prepareRow(row)
                                 return (
-                                    <tr {...row.getRowProps()} key={row.id}>
+                                    <tr {...row.getRowProps()} key={`tr-${row.index}`}>
                                         {
                                             row.cells.map(cell => {
                                                 return (
-                                                    <td {...cell.getCellProps()} key={cell.row.id}>
+                                                    <td {...cell.getCellProps()} key={`td-${cell.column.id}`}>
                                                         {
                                                             cell.render('Cell')}
                                                     </td>
