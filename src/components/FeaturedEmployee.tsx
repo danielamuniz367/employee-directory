@@ -1,4 +1,4 @@
-import { CardContent, Grid } from '@mui/material';
+import { CardContent, Grid, Typography } from '@mui/material';
 import React, { useContext } from 'react';
 import { Context } from '../store';
 import './FeaturedEmployee.css';
@@ -15,11 +15,13 @@ const FeaturedEmployee = () => {
             <Grid item xs={3} key={employee.id}>
               <CardContent>
                 <img src={employee.picture} />
-                <div>
+                <Typography variant="h6" gutterBottom>
                   {employee.first_name} {employee.last_name}
-                </div>
-                <div>{employee.department}</div>
-                <div>{employee.location}</div>
+                </Typography>
+                <Typography variant="subtitle1" gutterBottom>
+                  <div>{employee.department}</div>
+                  <div>{employee.location}</div>
+                </Typography>
               </CardContent>
             </Grid>
           ))
