@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState, useMemo, useCallback } from "react";
 import { Context } from "../store";
 import { useTable } from 'react-table';
-import './EmployeesGrid.css';
 import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import AddIcon from '@mui/icons-material/Add';
@@ -10,6 +9,8 @@ import Button from "@mui/material/Button";
 import { getEmployees, createEmployee, deleteEmployee, updateEmployee } from '../services/employees';
 import { createPortal } from 'react-dom';
 import EmployeeModal from "./EmployeeModal";
+import './EmployeeTable.css';
+
 
 
 const EmployeesGrid = () => {

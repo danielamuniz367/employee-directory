@@ -2,7 +2,7 @@ import { CardContent, Grid, Typography } from '@mui/material';
 import React, { useContext, useEffect } from 'react';
 import { Context } from '../store';
 import { getEmployees } from '../services/employees';
-import './FeaturedEmployee.css';
+import './EmployeeGrid.css';
 
 const FeaturedEmployee = () => {
   const [ data, setData]  = useContext(Context);
