@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Employees = () => {
-
   return (
     <div className="employee-info">
       <h1>Employee Directory</h1>

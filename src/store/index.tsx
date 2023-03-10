@@ -16,5 +16,7 @@ type Props = {
 export const Store = ({ children }: Props) => {
   const [data, setData] = useState([{}]);
 
-  return <Context.Provider value={[data, setData]}>{children}</Context.Provider>;
+  return (
+    <Context.Provider value={[data, setData]}>{children}</Context.Provider>
+  );
 };
