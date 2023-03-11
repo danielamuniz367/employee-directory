@@ -42,7 +42,6 @@ const EmployeesGrid = () => {
   const prepModalData = (data: any) => {
     console.log('prep');
     setModalData(data);
-    handleEditRow(rowData);
     return { action: 'edit', data: modalData };
   };
 
@@ -100,10 +99,13 @@ const EmployeesGrid = () => {
     if (action === 'add' && modalData) {
       handleAddRow(modalData);
     }
-    // else if (action === "edit" && modalData) {
-    //     handleEditRow(modalData);
-    // }
   }, [action, modalData]);
+
+  useEffect(() => { 
+    console.log('employee data changed');
+    getEmployees(setData)
+  }
+    , [employeeData])
 
   const columns: any = useMemo(
     () => [

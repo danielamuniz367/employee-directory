@@ -21,8 +21,9 @@ const EmployeeModal = ({ onClose, onModalDataUpdate }: any) => {
   const { action, data } = onModalDataUpdate();
 
   const onSubmit = async (data: Inputs) => {
-    setModalData(data);
-    if (action === 'edit') dataToTable(data);
+    // setModalData(data);
+    // if (action === 'edit') dataToTable(data);
+    onModalDataUpdate(data);
   };
 
   const dataToTable = useCallback(
