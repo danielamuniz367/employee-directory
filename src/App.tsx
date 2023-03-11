@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as ROUTES from './constants/routes';
-
 import { Store } from './store';
-import './App.css';
 import Employees from './components/Employees';
 import EmployeesGrid from './components/EmployeeTable';
 import FeaturedEmployee from './components/EmployeeGrid';
+import './App.css';
 
 // note to self: when you want to use React Router, the best way to start is with a navigation component that will
 // be used in the App component.

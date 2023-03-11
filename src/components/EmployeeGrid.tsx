@@ -1,7 +1,6 @@
 import { CardContent, Grid, Typography } from '@mui/material';
 import React, { useContext, useEffect } from 'react';
 import { Context } from '../store';
-import { getEmployees } from '../services/employees';
 import './EmployeeGrid.css';
 
 const FeaturedEmployee = () => {
@@ -9,7 +8,6 @@ const FeaturedEmployee = () => {
 
   useEffect(() => {
     console.log('employees grid rendered');
-    getEmployees(setData);
   }, []);
 
   return (
