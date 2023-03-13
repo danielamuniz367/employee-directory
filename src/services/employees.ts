@@ -1,12 +1,14 @@
 import { URL as url } from '../constants';
 
-export async function getEmployees(setData: (data: any) => void) {
+export async function getEmployees(setData: (data: any) => typeof data) {
   const employees = await fetch(url);
   const employeesData = await employees.json();
   setData(employeesData);
+  return employeesData;
 }
 
 export async function createEmployee(newData: any) {
+  console.log("adding new employeee", newData);
   const newEmployee = await fetch(url, {
     method: 'POST',
     headers: {
