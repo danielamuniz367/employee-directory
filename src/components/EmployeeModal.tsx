@@ -16,32 +16,21 @@ interface Inputs {
 }
 
 const EmployeeModal = ({ onClose, onModalDataUpdate }: any) => {
-  const [modalData, setModalData] = useState<Inputs>();
   const { register, setValue, handleSubmit } = useForm<Inputs>();
   const { action, data } = onModalDataUpdate();
 
-  const onSubmit = async (data: Inputs) => {
-    // setModalData(data);
-    // if (action === 'edit') dataToTable(data);
-    onModalDataUpdate(data);
+  const onSubmit = async (modalData: Inputs) => {
+    onModalDataUpdate(modalData);
   };
 
-  const dataToTable = useCallback(
-    (data: any) => {
-      onModalDataUpdate(data);
-    },
-    [onModalDataUpdate]
-  );
-
   useEffect(() => {
-    if (action === 'add') dataToTable(modalData);
-    else if (action === 'edit' && data) {
+    if (action === 'edit' && data) {
       const propKeys = Object.keys(data);
       propKeys.map((key: any) => {
         return setValue(key, data[key]);
       });
     }
-  }, [onSubmit, dataToTable]);
+  }, []);
 
   return (
     <div className="modal">
@@ -96,9 +85,7 @@ const EmployeeModal = ({ onClose, onModalDataUpdate }: any) => {
           name="picture"
           variant="standard"
         />
-        <Button type="submit" onClick={(_e) => dataToTable}>
-          Submit
-        </Button>
+        <Button type="submit">Submit</Button>
       </form>
       <Button onClick={onClose}>Close</Button>
     </div>

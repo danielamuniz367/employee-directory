@@ -26,12 +26,12 @@ const EmployeesGrid = () => {
   const [data, setData] = useContext(Context);
   const [employeeData, setEmployeeData] = useState(useMemo(() => data, []));
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [modalData, setModalData] = useState<any>();
-  const [rowData, setRowData] = useState<any>();
+  const [modalData, setModalData] = useState<any>({});
+  const [rowData, setRowData] = useState<any>({});
   const [action, setAction] = useState<string>('');
 
   // get modal form data for row adds/edits
-  const getModalData = (data: any) => {
+  const getModalData = (data: object) => {
     if (data) {
       setModalData(data);
     }
@@ -40,8 +40,12 @@ const EmployeesGrid = () => {
 
   // send data from table to modal form
   const prepModalData = (data: any) => {
-    console.log('prep');
-    setModalData(data);
+    if (data) {
+      console.log('row data to replace', rowData);
+      console.log('prep modal data', data);
+      setModalData(data);
+      handleEditRow(data);
+    }
     return { action: 'edit', data: modalData };
   };
 
@@ -54,16 +58,14 @@ const EmployeesGrid = () => {
   }, []);
 
   // edit row
-  const handleEditRow = async (row: any) => {
-    if (row && modalData) {
-      const oldData = data[row.row.index];
-      const employee = await updateEmployee(modalData, oldData);
-      console.log('employee edited', employee);
-      const dataCopy = [...employeeData];
-      dataCopy[row.row.index] = employee;
-      setEmployeeData(dataCopy);
-    }
-  };
+  const handleEditRow = useCallback(async (modalData: any) => {
+    console.log('handling edit');
+    const oldData = employeeData[rowData.index];
+    const employee = await updateEmployee(modalData, oldData);
+    const dataCopy = [...employeeData];
+    dataCopy[rowData.index] = employee;
+    setEmployeeData(dataCopy);
+  }, [modalData]);
 
   // delete row
   const handleDeleteRow = async (row: any) => {
@@ -77,35 +79,26 @@ const EmployeesGrid = () => {
   const handleOpenModal = (action: string, row?: any) => {
     setShowModal(true);
     setAction(action);
-    setRowData(row);
-    if (action === 'edit') {
-      console.log('data', row.row.original);
-      setModalData(row.row.original);
-    }
+    setRowData(row.row);
+    if (action === 'edit') setModalData(row.row.original);
   };
 
   const handleCloseModal = () => {
     setShowModal(false);
     setAction('');
-    setModalData('');
+    setModalData({});
   };
 
   useEffect(() => {
-    console.log('employees table rendered');
+    console.log('employee data changed', employeeData);
     getEmployees(setData);
-  }, []);
+  }, [employeeData]);
 
   useEffect(() => {
     if (action === 'add' && modalData) {
       handleAddRow(modalData);
     }
   }, [action, modalData]);
-
-  useEffect(() => { 
-    console.log('employee data changed');
-    getEmployees(setData)
-  }
-    , [employeeData])
 
   const columns: any = useMemo(
     () => [
@@ -179,7 +172,7 @@ const EmployeesGrid = () => {
             />,
             document.body
           )}
-        <table {...getTableProps}>
+        <table {...getTableProps} className="employee-directory__table">
           <thead>
             {headerGroups.map((headerGroup) => (
               <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
