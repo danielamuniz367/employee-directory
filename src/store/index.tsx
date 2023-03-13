@@ -1,4 +1,5 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
+import { getEmployees } from '../services/employees';
 
 type EmployeeData = [
   data: Array<object>,
@@ -15,6 +16,10 @@ type Props = {
 
 export const Store = ({ children }: Props) => {
   const [data, setData] = useState([{}]);
+
+  useEffect(() => {
+    getEmployees(setData);
+  }, []);
 
   return (
     <Context.Provider value={[data, setData]}>{children}</Context.Provider>
