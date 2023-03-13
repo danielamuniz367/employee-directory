@@ -18,6 +18,7 @@ export const Store = ({ children }: Props) => {
   const [data, setData] = useState([{}]);
 
   useEffect(() => {
+    console.log('context data changed');
     getEmployees(setData);
   }, []);
 
