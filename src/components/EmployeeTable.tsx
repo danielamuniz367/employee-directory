@@ -24,63 +24,48 @@ import './EmployeeTable.css';
 
 const EmployeesGrid = () => {
   const [data, setData] = useContext(Context);
-  const [employeeData, setEmployeeData] = useState(useMemo(() => data, []));
+  const [employeeData, setEmployeeData] = useState(useMemo(() => data, [data]));
   const [showModal, setShowModal] = useState<boolean>(false);
   const [modalData, setModalData] = useState<any>({});
   const [rowData, setRowData] = useState<any>({});
   const [action, setAction] = useState<string>('');
+  const [rowValues, setRowValues] = useState<string[]>([]);
 
-  // get modal form data for row adds/edits
-  const getModalData = (data: object) => {
-    if (data) {
-      setModalData(data);
-    }
-    return { action: 'add' };
-  };
-
-  // send data from table to modal form
-  const prepModalData = (data: any) => {
-    if (data) {
-      console.log('row data to replace', rowData);
-      console.log('prep modal data', data);
-      setModalData(data);
-      handleEditRow(data);
-    }
-    return { action: 'edit', data: modalData };
+  const updateEmployees = async () => {
+    const updatedEmployees = await getEmployees(setData);
+    setEmployeeData(updatedEmployees);
   };
 
   // add row
-  const handleAddRow = useCallback(async (modalData: any) => {
-    const employee = await createEmployee(modalData);
-    const dataCopy = [...employeeData];
-    dataCopy.push(employee);
-    setEmployeeData(dataCopy);
-  }, []);
+  const handleAddRow = async (_modalData: any) => {
+    if (_modalData) {
+      await createEmployee(_modalData);
+      updateEmployees();
+      setAction('edit');
+      setModalData({});
+    }
+  };
 
   // edit row
-  const handleEditRow = useCallback(async (modalData: any) => {
+  const handleEditRow = useCallback(async (_modalData: any, rowData: any) => {
     console.log('handling edit');
-    const oldData = employeeData[rowData.index];
-    const employee = await updateEmployee(modalData, oldData);
-    const dataCopy = [...employeeData];
-    dataCopy[rowData.index] = employee;
-    setEmployeeData(dataCopy);
-  }, [modalData]);
+    await updateEmployee(_modalData, rowData.original);
+    updateEmployees();
+  }, []);
 
   // delete row
   const handleDeleteRow = async (row: any) => {
-    const toDelete = row.row.original;
-    const dataCopy: any = [...employeeData];
-    dataCopy.splice(row.row.index, 1);
-    setEmployeeData(dataCopy);
-    await deleteEmployee(toDelete);
+    await deleteEmployee(row.row.original);
+    updateEmployees();
   };
 
   const handleOpenModal = (action: string, row?: any) => {
     setShowModal(true);
     setAction(action);
     setRowData(row.row);
-    if (action === 'edit') setModalData(row.row.original);
+    if (action === 'edit') {
+      setModalData(row.row.original);
+    }
   };
 
   const handleCloseModal = () => {
@@ -89,16 +74,29 @@ const EmployeesGrid = () => {
     setModalData({});
   };
 
-  useEffect(() => {
-    console.log('employee data changed', employeeData);
-    getEmployees(setData);
-  }, [employeeData]);
+  const getModalData = useCallback((data: object) => {
+    if (data) {
+      setRowValues(Object.values(data));
+      Object.values(data) != rowValues;
+      handleAddRow(data);
+    }
+    return { action: 'add' };
+  }, [handleAddRow]);
+
+  // send data from table to modal form
+  const prepModalData = (data: any) => {
+    if (data) {
+      console.log('row data to replace', rowData);
+      console.log('prep modal data', data);
+      setModalData(data);
+      handleEditRow(data, rowData);
+    }
+    return { action: 'edit', data: modalData };
+  };
 
   useEffect(() => {
-    if (action === 'add' && modalData) {
-      handleAddRow(modalData);
-    }
-  }, [action, modalData]);
+    console.log(handleAddRow);
+  }, [handleAddRow]);
 
   const columns: any = useMemo(
     () => [
