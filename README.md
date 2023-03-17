@@ -1,5 +1,5 @@
 ## To run this project
-Note: Updated this with Material UI upgrade and no longer using previous material-table that deprecated. 
+Note: Updated this project with Typescript and Material UI upgrade. Nonger using previous material-table that deprecated. 
 
 1.  Within project directory in a terminal, run `npm install`
 
