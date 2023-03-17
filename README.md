@@ -8,3 +8,6 @@ Note: Updated this project with Typescript and Material UI upgrade. Nonger using
 
 3.  Then open another terminal and make sure you're at the root level of project.
     Run `npm start`
+
+## Note
+-  The CRUD functionalities are available at this point, but I will still be making updates to this to get it to where I want it. 
