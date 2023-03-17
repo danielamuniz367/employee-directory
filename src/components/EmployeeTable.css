@@ -1,0 +1,11 @@
+.employee-directory {
+  padding: 0 1rem;
+}
+
+.employee-directory__table {
+  width: 100%;
+}
+
+.employee-directory__table th {
+  text-align: left;
+}

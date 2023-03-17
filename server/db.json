@@ -1,15 +1,15 @@
 {
   "employees": [
     {
-      "id": 3,
-      "department": "Safety",
-      "email": "sheaysman2@rakuten.co.jp",
-      "first_name": "Sonny",
+      "first_name": "Sonnie",
       "last_name": "Heaysman",
+      "title": "Safety Technician II",
+      "department": "Safety",
       "location": "Berlin",
       "phone": "202-921-2902",
-      "title": "Safety Technician II",
-      "picture": "https://randomuser.me/api/portraits/men/67.jpg"
+      "picture": "https://randomuser.me/api/portraits/men/67.jpg",
+      "id": 3,
+      "email": "sheaysman2@rakuten.co.jp"
     },
     {
       "id": 4,
@@ -133,15 +133,15 @@
       "picture": "https://randomuser.me/api/portraits/med/women/36.jpg"
     },
     {
-      "id": 15,
-      "department": "Human Resources",
-      "email": "jkraute@webs.com",
-      "first_name": "Jenni",
+      "first_name": "Jenny",
       "last_name": "Kraut",
+      "title": "Social Worker",
+      "department": "Human Resources",
       "location": "Denver",
       "phone": "685-284-2310",
-      "title": "Social Worker",
-      "picture": "https://randomuser.me/api/portraits/med/women/49.jpg"
+      "picture": "https://randomuser.me/api/portraits/med/women/49.jpg",
+      "id": 15,
+      "email": "jkraute@webs.com"
     },
     {
       "id": 16,
@@ -166,69 +166,37 @@
       "picture": "https://randomuser.me/api/portraits/med/women/13.jpg"
     },
     {
-      "id": 18,
-      "department": "Support",
-      "email": "cclaigeh@fc2.com",
-      "first_name": "Cynthy",
+      "first_name": "Cynthia",
       "last_name": "Claige",
+      "title": "Account Representative III",
+      "department": "Support",
       "location": "Austin",
       "phone": "930-119-5193",
-      "title": "Account Representative III",
-      "picture": "https://randomuser.me/api/portraits/med/women/75.jpg"
+      "picture": "https://randomuser.me/api/portraits/med/women/75.jpg",
+      "id": 18,
+      "email": "cclaigeh@fc2.com"
     },
     {
-      "id": 19,
-      "department": "Services",
-      "email": "rgoeringi@time.com",
-      "first_name": "Rodrique",
+      "first_name": "Rodrigo",
       "last_name": "Goering",
+      "title": "Staff Scientist",
+      "department": "Services",
       "location": "San Francisco",
       "phone": "437-941-0642",
-      "title": "Staff Scientist",
-      "picture": "https://randomuser.me/api/portraits/men/97.jpg"
+      "picture": "https://randomuser.me/api/portraits/men/97.jpg",
+      "id": 19,
+      "email": "rgoeringi@time.com"
     },
     {
-      "id": 20,
-      "department": "Services",
-      "email": "cwardej@nps.gov",
-      "first_name": "Clea",
+      "first_name": "Cleapatty",
       "last_name": "Warde",
+      "title": "Assistant Media Planner",
+      "department": "Services",
       "location": "New York City",
       "phone": "191-233-0757",
-      "title": "Assistant Media Planner",
-      "picture": "https://randomuser.me/api/portraits/med/women/58.jpg"
-    },
-    {
-      "department": "Product",
-      "email": "danielamuniz@email.com",
-      "first_name": "Daniela",
-      "last_name": "Muniz",
-      "location": "New York City",
-      "phone": "512-785-4810",
-      "title": "Software Engineer",
-      "id": 21,
-      "picture": "https://randomuser.me/api/portraits/women/91.jpg"
-    },
-    {
-      "first_name": "Ryan",
-      "last_name": "Ramadar",
-      "department": "Politics",
-      "title": "Political Consultant",
-      "phone": "123-456-7890",
-      "email": "rramadar@fakemail.com",
-      "location": "New York City",
-      "id": 22,
-      "picture": "https://randomuser.me/api/portraits/med/men/8.jpg"
-    },
-    {
-      "first_name": "Test",
-      "last_name": "Test",
-      "department": "Test",
-      "title": "Test",
-      "phone": "5127854810",
-      "email": "test",
-      "location": "Test",
-      "id": 23
+      "picture": "https://randomuser.me/api/portraits/med/women/58.jpg",
+      "id": 20,
+      "email": "cwardej@nps.gov"
     }
   ]
 }

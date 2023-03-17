@@ -1,16 +1,26 @@
-.App, .grid{
+.App {
   max-width: 100%;
   text-align: center;
-  opacity: 1;
+  padding: 1rem;
+  /* opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 2s;
+	animation-duration: 2s; */
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.employee-info,
+.featured-employee {
+  padding: 1rem;
+}
+
+.featured-employee {
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -20,12 +30,12 @@
 }
 
 @keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #aboutButton {
@@ -34,7 +44,7 @@
   width: 150px;
   height: 30px;
   margin-bottom: 10px;
-  font-family:inherit;
+  font-family: inherit;
 }
 
 .grid {
@@ -61,4 +71,10 @@ button {
 
 .view-btn {
   min-width: 150px;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: black;
 }
