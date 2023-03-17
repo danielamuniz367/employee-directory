@@ -1,8 +1,5 @@
-## UPDATE: IN THE MIDDLE OF REWRITING IN TYPESCRIPT
-
-- Take a look at the `ts` branch to see these changes
-
 ## To run this project
+Note: Updated this with Material UI upgrade and no longer using previous material-table that deprecated. 
 
 1.  Within project directory in a terminal, run `npm install`
 
