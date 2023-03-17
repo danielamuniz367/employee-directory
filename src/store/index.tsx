@@ -20,7 +20,7 @@ export const Store = ({ children }: Props) => {
   useEffect(() => {
     console.log('context data changed');
     getEmployees(setData);
-  }, []);
+  }, [setData]);
 
   return (
     <Context.Provider value={[data, setData]}>{children}</Context.Provider>

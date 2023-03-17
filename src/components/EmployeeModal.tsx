@@ -1,11 +1,11 @@
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import './EmployeeModal.css';
 
 interface Inputs {
-  id: number;
+  id: string;
   first_name: string;
   last_name: string;
   title: string;

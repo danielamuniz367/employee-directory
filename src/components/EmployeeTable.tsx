@@ -1,12 +1,12 @@
 import React, {
   useContext,
-  useEffect,
   useState,
   useMemo,
   useCallback,
+  useRef,
 } from 'react';
 import { Context } from '../store';
-import { useTable } from 'react-table';
+import { useSortBy, useTable } from 'react-table';
 import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import AddIcon from '@mui/icons-material/Add';
@@ -24,33 +24,35 @@ import './EmployeeTable.css';
 
 const EmployeesGrid = () => {
   const [data, setData] = useContext(Context);
-  const [employeeData, setEmployeeData] = useState(useMemo(() => data, [data]));
   const [showModal, setShowModal] = useState<boolean>(false);
   const [modalData, setModalData] = useState<any>({});
-  const [rowData, setRowData] = useState<any>({});
+  const rowData = useRef<any>({});
   const [action, setAction] = useState<string>('');
   const [rowValues, setRowValues] = useState<string[]>([]);
 
   const updateEmployees = async () => {
-    const updatedEmployees = await getEmployees(setData);
-    setEmployeeData(updatedEmployees);
+    await getEmployees(setData);
   };
 
   // add row
-  const handleAddRow = async (_modalData: any) => {
+  const handleAddRow = useCallback(async (_modalData: any) => {
     if (_modalData) {
       await createEmployee(_modalData);
       updateEmployees();
-      setAction('edit');
-      setModalData({});
+      handleCloseModal();
     }
-  };
+  }, [createEmployee]);
 
   // edit row
   const handleEditRow = useCallback(async (_modalData: any, rowData: any) => {
-    console.log('handling edit');
-    await updateEmployee(_modalData, rowData.original);
-    updateEmployees();
+    console.log('handling edit', rowData);
+    try {
+      await updateEmployee(_modalData, rowData.original);
+      updateEmployees();
+    } catch (error) {
+      console.error('there was a problem with edit');
+    }
+    handleCloseModal();
   }, []);
 
   // delete row
@@ -62,8 +64,8 @@ const EmployeesGrid = () => {
   const handleOpenModal = (action: string, row?: any) => {
     setShowModal(true);
     setAction(action);
-    setRowData(row.row);
     if (action === 'edit') {
+      rowData.current = row.row;
       setModalData(row.row.original);
     }
   };
@@ -86,17 +88,13 @@ const EmployeesGrid = () => {
   // send data from table to modal form
   const prepModalData = (data: any) => {
     if (data) {
-      console.log('row data to replace', rowData);
+      console.log('row data to replace', rowData.current);
       console.log('prep modal data', data);
       setModalData(data);
-      handleEditRow(data, rowData);
+      handleEditRow(data, rowData.current);
     }
     return { action: 'edit', data: modalData };
   };
-
-  useEffect(() => {
-    console.log(handleAddRow);
-  }, [handleAddRow]);
 
   const columns: any = useMemo(
     () => [
@@ -131,6 +129,7 @@ const EmployeesGrid = () => {
       {
         Header: 'Actions',
         accessor: 'actions',
+        disableSortBy: true,
         Cell: (row: any) => (
           <div>
             <ModeEditOutlinedIcon
@@ -143,10 +142,10 @@ const EmployeesGrid = () => {
         ),
       },
     ],
-    [employeeData]
+    [data]
   );
 
-  const tableInstance = useTable({ columns: columns, data: employeeData });
+  const tableInstance = useTable({ columns: columns, data: data}, useSortBy);
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     tableInstance;
@@ -175,8 +174,15 @@ const EmployeesGrid = () => {
             {headerGroups.map((headerGroup) => (
               <tr {...headerGroup.getHeaderGroupProps()} key={headerGroup.id}>
                 {headerGroup.headers.map((column) => (
-                  <th {...column.getHeaderProps()} key={column.id}>
+                  <th {...column.getHeaderProps(column.getSortByToggleProps())} key={column.id}>
                     {column.render('Header')}
+                    <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? " 🔽"
+                        : " 🔼"
+                      : ""}
+                  </span>
                   </th>
                 ))}
               </tr>
